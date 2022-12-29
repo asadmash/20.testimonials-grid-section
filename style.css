@@ -1,0 +1,238 @@
+/* resets */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --violet: hsl(263, 55%, 52%);
+    --darkgrayishblue: hsl(217, 19%, 35%);
+    --darkblackishblue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    --lightgray: hsl(0, 0%, 81%);
+    --lightgrayishblue: hsl(210, 46%, 95%);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lightgrayishblue);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 20px;
+    max-width: 1250px;
+    padding: 4.375rem 1.5625rem;
+    grid-template-areas: 'grid1'
+    'grid2'
+    'grid3'
+    'grid4'
+    'grid5';
+  
+}
+
+.container > .grid {
+    padding: 1.5625rem;
+    border-radius: 10px;
+    margin-bottom: 1.5625rem;
+    height: auto;
+    width: 100%;
+    transition: all .2s ease-in-out;
+}
+
+.container > .grid:hover {
+    transform: scale(1.05);
+}
+.container .profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.container > .grid-1 {
+    background-color: var(--violet);
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: right 1.875rem top;
+    background-size: 35%;
+    grid-area: grid1;
+    border: 2px solid transparent;
+
+
+}
+.container > .grid-1:hover {
+    border: 2px solid var(--darkblackishblue);
+}
+
+.grid-1 .name {
+    color: var(--white);
+}
+.grid-1 h2 {
+    color: var(--white);
+    font-size: 25px;
+    padding: 20px 0;
+}
+
+.grid-1 > p {
+    color: var(--lightgray);
+}
+
+
+
+.container > .grid-2 {
+    background-color: var(--darkgrayishblue);
+    grid-area: grid2;
+    border: 2px solid transparent;
+}
+
+.container > .grid-2:hover {
+    border: 2px solid var(--white);
+}
+
+.grid-2 .name {
+    color: var(--white);
+}
+.grid-2 h2 {
+    color: var(--white);
+    font-size: 25px;
+    padding: 20px 0;
+}
+
+.grid-2 > p {
+    color: var(--lightgray);
+}
+
+.container > .grid-3 {
+    background-color: var(--white);
+    grid-area: grid3;
+    border: 2px solid transparent;
+}
+
+.container > .grid-3:hover {
+    border: 2px solid var(--darkgrayishblue);
+}
+
+.grid-3 .name {
+    color: var(--darkblackishblue);
+}
+.grid-3 h2 {
+    color: var(--darkblackishblue);
+    font-size: 25px;
+    padding: 20px 0;
+}
+
+.grid-3 > p {
+    color: var(--darkgrayishblue);
+}
+
+.container > .grid-4 {
+    background-color: var(--darkblackishblue);
+    grid-area: grid4;
+    border: 2px solid transparent;
+}
+
+.container > .grid-4:hover {
+    border: 2px solid var(--violet);
+}
+
+.grid-4 .name {
+    color: var(--white);
+}
+.grid-4 h2 {
+    color: var(--white);
+    font-size: 25px;
+    padding: 20px 0;
+}
+
+.grid-4 > p {
+    color: var(--lightgray);
+}
+.container > .grid-5 {
+    background-color: var(--white);
+    grid-area: grid5;
+    border: 2px solid transparent;
+}
+
+.container > .grid-5:hover {
+    border: 2px solid var(--darkgrayishblue);
+}
+
+.grid-5 .name {
+    color: var(--darkblackishblue);
+    grid-area: grid5;
+}
+.grid-5 h2 {
+    color: var(--darkblackishblue);
+    font-size: 25px;
+    padding: 20px 0;
+}
+
+.grid-5 > p {
+    color: var(--darkblackishblue);
+}
+
+.status {
+    color: var(--lightgray);
+}
+
+.attribution {
+    font-size: 20px;
+}
+
+@media (min-width: 700px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-rows: repeat(12, 1fr); */
+    grid-template-areas: 'grid1 grid2'
+                        'grid1 grid3'
+                        "grid4 grid5"
+                        'grid4 grid5'
+                        /* '      grid5' */
+    
+    
+    ;
+    }
+
+   .container > .grid-1 {
+        background-size: 25%;
+    }
+
+    .attribution {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1250px) {
+
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+        /* grid-template-rows: repeat(12, 1fr); */
+    grid-template-areas: 'grid1 grid1 grid2 grid5'
+                        'grid3 grid4 grid4 grid5';
+                        
+    
+    
+    ;
+    }
+
+    .container > .grid-1 {
+        background-size: 20%;
+    }
+
+    .attribution {
+        font-size: 30px;
+    }
+}
+
+
